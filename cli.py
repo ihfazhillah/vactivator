@@ -2,7 +2,7 @@ from pathlib import Path
 
 import click
 
-from vactivator.activator import activate
+from vactivator import activator
 from vactivator.finders import idea
 
 
@@ -20,7 +20,7 @@ def activate():
         finder = finder_class(str(curdir))
         if finder.test():
             activator_path = finder.get_venv_activator()
-            activate(activator_path)
+            activator.activate(activator_path)
 
 
 if __name__ == "__main__":
