@@ -2,10 +2,10 @@ from pathlib import Path
 from xml.etree.ElementTree import ElementTree
 
 
-class IdeaFinder:
-    def __init__(self, path: str):
-        self.path = Path(path)
+from vactivator.finders.base import BaseFinder
 
+
+class IdeaFinder(BaseFinder):
     def test(self):
         idea = self.path / ".idea"
         return idea.exists()
@@ -24,5 +24,3 @@ class IdeaFinder:
             abs_python_path = python_path.replace("$USER_HOME$", str(home))
 
             return str(Path(abs_python_path).parent / "activate")
-
-
