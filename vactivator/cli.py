@@ -22,6 +22,7 @@ def activate():
         if finder.test():
             activator_path = finder.get_venv_activator()
             activator.activate(activator_path)
+            return
 
 
 if __name__ == "__main__":

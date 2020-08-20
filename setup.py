@@ -107,7 +107,7 @@ setup(
     # py_modules=['mypackage'],
 
     entry_points={
-        'console_scripts': ['vactivator=cli:vactivator'],
+        'console_scripts': ['vactivator=vactivator.cli:vactivator'],
     },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
