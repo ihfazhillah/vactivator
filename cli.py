@@ -3,7 +3,7 @@ from pathlib import Path
 import click
 
 from vactivator import activator
-from vactivator.finders import idea
+from vactivator.finders import idea, venv_in_curdir
 
 
 @click.group()
@@ -14,7 +14,8 @@ def vactivator():
 def activate():
     curdir = Path.cwd()
     finders = [
-        idea.IdeaFinder
+        idea.IdeaFinder,
+        venv_in_curdir.VenvInCurdirFinder
     ]
     for finder_class in finders:
         finder = finder_class(str(curdir))
