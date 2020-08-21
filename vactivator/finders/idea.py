@@ -17,8 +17,7 @@ class IdeaFinder(BaseFinder):
 
     def test(self):
         idea = self.path / ".idea"
-        python_path = self.get_python_path()
-        return idea.exists() and python_path
+        return idea.exists() and self.get_python_path()
 
     def get_venv_activator(self):
         home = Path.home()
